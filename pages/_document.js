@@ -14,6 +14,10 @@ class MyDocument extends Document {
                 </Head>
                 <body>
                     <style jsx global>{`
+                    ::-webkit-scrollbar {
+                        width: 0px;
+                        background: transparent; /* make scrollbar transparent */
+                    }
                         html {
                             height:100%;
                         }

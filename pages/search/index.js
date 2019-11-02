@@ -23,7 +23,7 @@ const CardScrollContainer = styled.div`
   margin-top: -100px;
   padding-top: 100px;
   position: relative;
-  width: 100%;
+  // width: 100%;
   backface-visibility: hidden;
   will-change: overflow;
 `
@@ -227,6 +227,7 @@ class Home extends Component {
           </Select>
           <Button style={{ backgroundColor: '#fff' }} label="Submit" type="submit" onClick={this.handleSubmit} >Submit</Button>
         </ColumnSidebar>
+
         <Column>
           <h1>{"Devs"}</h1>
           <CardScrollContainer>
