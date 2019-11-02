@@ -6,7 +6,7 @@ let props = {
   avatar_url: "https://picsum.photos/200/300",
   html_url: "https://github.com/octocat",
   repos_url: "https://api.github.com/users/octocat/repos",
-  name: "monalisa octocat",
+  name: "Monalisa Octocat",
   company: "GitHub",
   blog: "https://github.com/blog",
   location: "San Francisco",
@@ -26,6 +26,8 @@ const Home = () => (
     </Head>
 
     <UserCard {...props} />
+    <UserCard {...props} />
+
 
   </div>
 )
