@@ -1,57 +1,69 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
 import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Avatar from '@material-ui/core/Avatar';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ShareIcon from '@material-ui/icons/Share';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import styled from 'styled-components'
 
-const useStyles = makeStyles({
-  card: {
-    minWidth: 275,
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 5px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+const StyledCard = styled(Card)`
+  width: 550px;
+  margin: 6em;
+`
 
-export default function SimpleCard() {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+const UserCard = (props) => (
+  <StyledCard>
+    <CardHeader
+      avatar={
+        <Avatar alt="Avatar" src={props.avatar_url} className='avatar' />
+      }
+      title={props.name}
+      subheader="September 14, 2016"
+    />
 
-  return (
-    <Card className={classes.card}>
-      <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-  );
-}
+    <CardContent>
+
+      <Typography>
+        {props.company}
+      </Typography>
+
+      <Typography>
+        {props.blog}
+      </Typography>
+
+      <Typography>
+        {props.location}
+      </Typography>
+
+      <Typography>
+        {props.email}
+      </Typography>
+
+      <Typography>
+        {props.hireable}
+      </Typography>
+
+      <Typography>
+        {props.bio}
+      </Typography>
+
+    </CardContent>
+    <CardActions>
+      <Button size="small" color="primary">
+        Share
+        </Button>
+      <Button size="small" color="primary">
+        Learn More
+        </Button>
+    </CardActions>
+  </StyledCard>
+)
+
+export default UserCard
