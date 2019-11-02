@@ -52,7 +52,6 @@ const Home = () => (
 
       </div>
     </div>
-
     <style jsx>{`
       .pageDiv {
         height:200px;
