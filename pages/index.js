@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Nav from '../components/nav'
 import styled from 'styled-components'
+import Button from '@material-ui/core/Button'
 
 const NewText = styled.h1`
   text-align: center;
@@ -15,7 +16,7 @@ const Home = () => (
     <Head>
       <title>Home</title>
       <link rel='icon' href='/favicon.ico' />
-    </Head>
+    </Head>/
 
     <Nav />
 
@@ -26,12 +27,15 @@ const Home = () => (
       </p>
 
       <div className='row'>
-        <Link href='/find'className="card">
+        <Link href='/find' className="card">
           <NewText>{'Recruiters'}</NewText>
         </Link>
         <Link href='/improve'>
           <NewText>{'Developers'}</NewText>
         </Link>
+        <Button variant="contained" color="primary">
+          Hello World
+        </Button>
       </div>
     </div>
 
