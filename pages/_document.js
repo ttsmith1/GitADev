@@ -14,7 +14,12 @@ class MyDocument extends Document {
                 </Head>
                 <body>
                     <style jsx global>{`
+                        html {
+                            height:100%;
+                        }
                         body {
+                            margin: 0;
+                            height: 100vh;
                             font-family: 'Lexend Deca', sans-serif;
                         }
                     `}</style>
