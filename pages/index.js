@@ -1,6 +1,13 @@
 import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import styled from 'styled-components'
+
+const NewText = styled.h1`
+  text-align: center;
+  color: red;
+  background-color: blue;
+`
 
 const Home = () => (
   <div>
@@ -30,6 +37,7 @@ const Home = () => (
           href='https://github.com/zeit/next.js/tree/master/examples'
           className='card'
         >
+          <NewText>{'sdfsd'}</NewText>
           <h3>Examples &rarr;</h3>
           <p>Find other example boilerplates on the Next.js GitHub.</p>
         </a>
