@@ -65,7 +65,7 @@ class Home extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const results = await getUsers(this.state.location, this.state.location)
+    const results = await getUsers(this.state.location, this.state.location, this.state.experience)
     this.setState({ users: results })
   }
 
@@ -95,7 +95,7 @@ class Home extends Component {
             value={this.state.experience}
             onChange={this.handleSelect}
           >
-            <MenuItem value="All">
+            <MenuItem value={0}>
               {'All'}
             </MenuItem>
             <MenuItem value={1}>{'Beginner'}</MenuItem>
