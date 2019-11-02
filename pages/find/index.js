@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import Link from 'next/link'
-import Nav from '../components/nav'
+import Nav from '../../components/nav'
 import styled from 'styled-components'
 
 const NewText = styled.h1`
@@ -17,21 +16,29 @@ const Home = () => (
       <link rel='icon' href='/favicon.ico' />
     </Head>
 
-    <Nav />
-
     <div className='hero'>
-      <h1 className='title'>Git a Dev</h1>
+      <h1 className='title'>Welcome to Next.js!</h1>
       <p className='description'>
-        Use the power of Github to find good developers and learn what makes a good profile.
+        To get started, edit <code>pages/index.js</code> and save to reload.
       </p>
 
       <div className='row'>
-        <Link href='/find'className="card">
-          <NewText>{'Recruiters'}</NewText>
-        </Link>
-        <Link href='/improve'>
-          <NewText>{'Developers'}</NewText>
-        </Link>
+        <a href='https://nextjs.org/docs' className='card'>
+          <h3>Documentation &rarr;</h3>
+          <p>Learn more about Next.js in the documentation.</p>
+        </a>
+        <a href='https://nextjs.org/learn' className='card'>
+          <h3>Next.js Learn &rarr;</h3>
+          <p>Learn about Next.js by following an interactive tutorial!</p>
+        </a>
+        <a
+          href='https://github.com/zeit/next.js/tree/master/examples'
+          className='card'
+        >
+          <NewText>{'sdfsd'}</NewText>
+          <h3>Examples &rarr;</h3>
+          <p>Find other example boilerplates on the Next.js GitHub.</p>
+        </a>
       </div>
     </div>
 
