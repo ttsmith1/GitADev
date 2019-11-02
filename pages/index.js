@@ -27,11 +27,11 @@ const Home = () => (
       </p>
 
       <div className='row'>
-        <Link href='/find' className="card">
-          <NewText>{'Recruiters'}</NewText>
+        <Link href='/insight' className="card">
+          <NewText>{'Insight'}</NewText>
         </Link>
-        <Link href='/improve'>
-          <NewText>{'Developers'}</NewText>
+        <Link href='/search'>
+          <NewText>{'Search'}</NewText>
         </Link>
         <Button variant="contained" color="primary">
           Hello World

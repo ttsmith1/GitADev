@@ -1,7 +1,7 @@
-import React from 'react'
-import Head from 'next/head'
+import React from './node_modules/react'
+import Head from './node_modules/next/head'
 import Nav from '../../components/nav'
-import styled from 'styled-components'
+import styled from './node_modules/styled-components'
 
 const NewText = styled.h1`
   text-align: center;
