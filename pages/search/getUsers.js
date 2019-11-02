@@ -2,6 +2,7 @@ import fetch from 'cross-fetch'
 
 export const getUsers = async (location, language, experience) => {
 
+    console.log(experience)
     let response = await fetch(`https://api.github.com/search/users?q=language:${language}+location:${location}`);
     let data = await response.json();
 
