@@ -18,7 +18,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import styled from 'styled-components'
 
 const StyledCard = styled(Card)`
-  width: 550px;
+  // width: 550px;
   margin: 6em;
   color: white;
 `

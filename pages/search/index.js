@@ -4,13 +4,20 @@ import Nav from '../../components/nav'
 import { getUsers } from './getUsers'
 import UserCard, { userCard } from '../../components/userCard'
 import styled from 'styled-components'
+<<<<<<< HEAD
 import { Layout, Column } from '../../components/layoutStyles';
+=======
+import classNames from 'classnames';
+>>>>>>> b8cbff59f4b2fe576d80362177da43a0a6f5d946
 import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
+import { styled as styled2 } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField'
 import SimpleMenu from '../../components/dropdown'
 import Button from "@material-ui/core/button"
+import { white } from 'ansi-colors'
 
 const CardScrollContainer = styled.div`
   display: flex;
@@ -24,17 +31,127 @@ const CardScrollContainer = styled.div`
   will-change: overflow;
 `
 
+<<<<<<< HEAD
+=======
+const styles = theme => ({
+  root: {
+    color: '#fff'
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    color: 'white'
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+    color: '#fff',
+  },
+
+  multilineColor: {
+    color: '#fff'
+  },
+
+  cssLabel: {
+    color: '#fff'
+  },
+
+  input: {
+    color: '#fff'
+  },
+
+  cssOutlinedInput: {
+    '&$cssFocused $notchedOutline': {
+      borderColor: `${theme.palette.primary.main} !important`,
+    },
+    color: '#fff'
+  },
+
+  cssOutlinedInput: {
+    color: '#fff',
+  },
+
+  cssFocused: {
+    color: '#fff'
+  },
+
+  notchedOutline: {
+    borderWidth: '1px',
+    borderColor: 'white !important'
+  },
+  cssLabel: {
+    color: '#fff',
+  },
+  cssOutlinedInput: {
+    '$notchedOutline': {
+      borderColor: '#fff',
+    },
+  },
+
+});
+
+const Layout = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height:100vh;
+`
+
+>>>>>>> b8cbff59f4b2fe576d80362177da43a0a6f5d946
 const ScrollSection = styled.div`
   overflow: auto;
   height: auto;
+  width: auto;
   padding: .5rem;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
 `
 
+<<<<<<< HEAD
+=======
+const Column = styled.div`
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  box-sizing:border-box;
+  color: white;
+  max-height: 100vh;
+  background-color: #2a2b30;
+`
+
+const ColumnSidebar = styled.div`
+  background-color: #1c1d22;
+  color: white;
+  margin: 0px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  box-sizing:border-box;
+  max-height: 100vh;
+  max-width: 30vw;
+`
+
+>>>>>>> b8cbff59f4b2fe576d80362177da43a0a6f5d946
 const StyledSelect = styled.div`
 padding-top: 12px;
 `
+
+const StyledTextField = styled2(TextField)({
+  color: '#fff',
+});
 
 class Home extends Component {
   constructor(props) {
@@ -62,14 +179,69 @@ class Home extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
       <Layout>
-        <Column>
+        <ColumnSidebar>
           <h1>{"Search for a Developer"}</h1>
-          <TextField name="language" label="Programing Language" value={this.state.value} onChange={this.handleChange('language')}></TextField>
-          <TextField name="location" label="Location" value={this.state.value} onChange={this.handleChange('location')}></TextField>
+
+          <StyledTextField
+            id="standard-language"
+            name="language"
+            label="Programing Language"
+            className={classes.textField}
+            value={this.state.value}
+            onChange={this.handleChange('language')}
+            margin="normal"
+            variant="outlined"
+            InputLabelProps={{
+              classes: {
+                root: classes.cssFocused,
+                label: classes.input,
+                focused: classes.cssFocused,
+                className: classes.input
+              },
+            }}
+
+            InputProps={{
+              classes: {
+                root: classes.cssFocused,
+                focused: classes.cssFocused,
+                notchedOutline: classes.notchedOutline,
+                className: classes.input
+              }
+            }}
+          />
+
+          <StyledTextField
+            id="standard-location"
+            name="location"
+            label="Location"
+            className={classes.textField}
+            value={this.state.location}
+            onChange={this.handleChange('location')}
+            margin="normal"
+            variant="outlined"
+            InputLabelProps={{
+              classes: {
+                root: classes.cssFocused,
+                label: classes.input,
+                focused: classes.cssFocused,
+                className: classes.input
+              },
+            }}
+
+            InputProps={{
+              classes: {
+                root: classes.cssFocused,
+                focused: classes.cssFocused,
+                notchedOutline: classes.notchedOutline,
+                className: classes.input
+              }
+            }}
+          />
           <StyledSelect>
-            <InputLabel id="demo-simple-select-label" value={this.state.value} onChange={this.handleChange}>Experience</InputLabel>
+            <InputLabel style={{ color: '#fff' }} id="demo-simple-select-label" value={this.state.value} onChange={this.handleChange}>Experience</InputLabel>
           </StyledSelect>
 
           <Select
@@ -77,16 +249,17 @@ class Home extends Component {
             id="demo-simple-select-helper"
             value={this.state.experience}
             onChange={this.handleSelect}
+            style={{ color: '#fff', underline: '#fff' }}
           >
             <MenuItem value={0}>
               {'All'}
             </MenuItem>
-            <MenuItem value={1}>{'Beginner'}</MenuItem>
+            <MenuItem style={{ color: '#000' }} value={1}>{'Beginner'}</MenuItem>
             <MenuItem value={2}>{'Intermediate'}</MenuItem>
             <MenuItem value={3}>{'Advanced'}</MenuItem>
           </Select>
-          <Button label="Submit" type="submit" onClick={this.handleSubmit} >Submit</Button>
-        </Column>
+          <Button style={{ backgroundColor: '#fff' }} label="Submit" type="submit" onClick={this.handleSubmit} >Submit</Button>
+        </ColumnSidebar>
         <Column>
           <h1>{"Devs"}</h1>
           <CardScrollContainer>
@@ -97,9 +270,9 @@ class Home extends Component {
             </ScrollSection>
           </CardScrollContainer>
         </Column>
-      </Layout>
+      </Layout >
     )
   }
 }
 
-export default Home
+export default withStyles(styles)(Home);
