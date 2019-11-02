@@ -10,8 +10,8 @@ export const getUsers = async (location, language, experience) => {
     // console.log(process.env.GH_TOKEN);
 
     const userIds = data.items.map(user => user.login);
-    if (userIds.length > 5) {
-        userIds.splice(5);
+    if (userIds.length > 10) {
+        userIds.splice(10);
     }
     console.log(userIds)
 
@@ -31,7 +31,8 @@ export const getUsers = async (location, language, experience) => {
 
     const userData = rawUserData.map(user => ({
         avatar_url: user.avatar_url,
-        user: user.name,
+        name: user.name,
+        email: user.email,
         company: user.company,
         blog: user.blog,
         location: user.location,
