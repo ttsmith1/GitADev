@@ -4,11 +4,8 @@ import Nav from '../../components/nav'
 import { getUsers } from './getUsers'
 import UserCard, { userCard } from '../../components/userCard'
 import styled from 'styled-components'
-<<<<<<< HEAD
 import { Layout, Column } from '../../components/layoutStyles';
-=======
 import classNames from 'classnames';
->>>>>>> b8cbff59f4b2fe576d80362177da43a0a6f5d946
 import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -31,8 +28,6 @@ const CardScrollContainer = styled.div`
   will-change: overflow;
 `
 
-<<<<<<< HEAD
-=======
 const styles = theme => ({
   root: {
     color: '#fff'
@@ -91,15 +86,7 @@ const styles = theme => ({
 
 });
 
-const Layout = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
-  height:100vh;
-`
 
->>>>>>> b8cbff59f4b2fe576d80362177da43a0a6f5d946
 const ScrollSection = styled.div`
   overflow: auto;
   height: auto;
@@ -107,26 +94,6 @@ const ScrollSection = styled.div`
   padding: .5rem;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
-`
-
-<<<<<<< HEAD
-=======
-const Column = styled.div`
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin: 0px;
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  flex-direction: column;
-  box-sizing:border-box;
-  color: white;
-  max-height: 100vh;
-  background-color: #2a2b30;
 `
 
 const ColumnSidebar = styled.div`
@@ -144,7 +111,6 @@ const ColumnSidebar = styled.div`
   max-width: 30vw;
 `
 
->>>>>>> b8cbff59f4b2fe576d80362177da43a0a6f5d946
 const StyledSelect = styled.div`
 padding-top: 12px;
 `

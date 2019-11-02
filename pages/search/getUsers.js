@@ -12,6 +12,9 @@ const repos = experience => {
         case 3:
             repo = `repos:>10`
             break;
+        default:
+            repo = ``
+            break
     }
 
     return repo;
