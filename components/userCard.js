@@ -18,7 +18,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import styled from 'styled-components'
 
 const StyledCard = styled(Card)`
-  // width: 550px;
   margin: 6em;
   color: white;
 `
@@ -30,6 +29,15 @@ const data = [
   { name: 'Group D', value: 200 },
 ];
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+function Employed(props) {
+  const isHired = props.higherable;
+  if (isHired) {
+    return <p>Hirable</p>;
+  } else {
+    return <p>Not</p>;
+  }
+}
 
 const UserCard = (props) => (
   <StyledCard style={{ backgroundColor: '#515662' }}>
@@ -92,6 +100,11 @@ const UserCard = (props) => (
           <Typography variant="body2">
             Current company: {props.company}
           </Typography>
+
+          {props.hireable &&
+            <p>{'is searching'}</p>
+          }
+
         </Grid>
       </Grid>
 
