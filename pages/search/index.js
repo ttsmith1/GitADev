@@ -1,93 +1,80 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Head from 'next/head'
+import Nav from '../../components/nav'
+import { getUsers } from './getUsers'
 import styled from 'styled-components'
+import InputLabel from '@material-ui/core/InputLabel'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import TextField from '@material-ui/core/TextField'
+import SimpleMenu from '../../components/dropdown'
+import Button from "@material-ui/core/button"
 
-const NewText = styled.h1`
-  text-align: center;
-  color: red;
-  background-color: blue;
+const Layout = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
 `
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel='icon' href='/favicon.ico' />
-    </Head>
+const Column = styled.div`
+  margin: 6px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  box-sizing:border-box;
+`
 
-    <div className='hero'>
-      <h1 className='title'>Welcome to Next.js!</h1>
-      <p className='description'>
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { language: '', location: '', experience: '' };
 
-      <div className='row'>
-        <a href='https://nextjs.org/docs' className='card'>
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href='https://nextjs.org/learn' className='card'>
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href='https://github.com/zeit/next.js/tree/master/examples'
-          className='card'
-        >
-          <NewText>{'sdfsd'}</NewText>
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
-    </div>
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
+  handleSubmit = (e) => {
+    getUsers()
+    e.preventDefault();
+  }
+
+  handleChange = field => event => {
+    this.setState({ [field]: event.target.value });
+  }
+
+  render() {
+    return (
+      <Layout>
+        <Column>
+          <h1>{"Search for a Developer"}</h1>
+          <TextField name="language" label="Programing Language" value={this.state.value} onChange={this.handleChange('language')}></TextField>
+          <TextField name="location" label="Location" value={this.state.value} onChange={this.handleChange('location')}></TextField>
+          <InputLabel id="demo-simple-select-label" value={this.state.value} onChange={this.handleChange}>Experience</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={''}
+            onChange={'handleChange'}
+          >
+            {/* <MenuItem value="dsfgdfg">
+          <em>None</em>
+        </MenuItem> */}
+            <MenuItem>{'Beginner'}</MenuItem>
+            <MenuItem>{'Intermediate'}</MenuItem>
+            <MenuItem>{'Advanced'}</MenuItem>
+          </Select>
+          <Button label="Submit" type="submit" onClick={this.handleSubmit} >Submit</Button>
+        </Column>
+        <Column>
+          <h1>{"Devs"}</h1>
+        </Column>
+      </Layout>
+    )
+  }
+}
 
 export default Home
