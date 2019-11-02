@@ -1,6 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import UserCard from '../../components/userCard'
+import { Layout, Column } from '../../components/layoutStyles'
+import Item from '../../components/item'
 
 let props = {
   avatar_url: "https://picsum.photos/200/300",
@@ -24,10 +26,14 @@ const Home = () => (
       <title>Home</title>
       <link rel='icon' href='/favicon.ico' />
     </Head>
-
-    <UserCard {...props} />
-    <UserCard {...props} />
-
+    <Layout>
+      <Column>
+        <UserCard {...props} />
+      </Column>
+      <Column>
+        <Item status={0} />
+      </Column>
+    </Layout>
 
   </div>
 )

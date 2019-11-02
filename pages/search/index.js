@@ -4,6 +4,7 @@ import Nav from '../../components/nav'
 import { getUsers } from './getUsers'
 import UserCard, { userCard } from '../../components/userCard'
 import styled from 'styled-components'
+import { Layout, Column } from '../../components/layoutStyles';
 import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -23,13 +24,6 @@ const CardScrollContainer = styled.div`
   will-change: overflow;
 `
 
-const Layout = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
-`
-
 const ScrollSection = styled.div`
   overflow: auto;
   height: auto;
@@ -38,17 +32,6 @@ const ScrollSection = styled.div`
   -ms-overflow-style: none;
 `
 
-const Column = styled.div`
-  margin: 6px;
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-  flex-direction: column;
-  box-sizing:border-box;
-  max-height: 90vh;
-`
 const StyledSelect = styled.div`
 padding-top: 12px;
 `

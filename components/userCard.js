@@ -42,7 +42,7 @@ const UserCard = (props) => (
           <MoreVertIcon />
         </IconButton>
       }
-      titleTypographyProps={{ variant: 'h7' }}
+      titleTypographyProps={{ variant: 'h6' }}
       title={props.name}
       subheader={props.email}
     />
