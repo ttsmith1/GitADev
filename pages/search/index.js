@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Head from 'next/head'
 import Nav from '../../components/nav'
-import { getUsers } from './getUsers'
+import { getUsers } from '../../helpers/getUsers'
 import UserCard, { userCard } from '../../components/userCard'
 import styled from 'styled-components'
 import { Layout, Column } from '../../components/layoutStyles';
@@ -13,7 +13,7 @@ import { styled as styled2 } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField'
 import SimpleMenu from '../../components/dropdown'
-import Button from "@material-ui/core/button"
+import Button from "@material-ui/core/Button"
 import { white } from 'ansi-colors'
 
 const CardScrollContainer = styled.div`
