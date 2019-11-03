@@ -14,7 +14,7 @@ const repos = experience => {
             break;
         default:
             repo = ``
-            break
+            break;
     }
 
     return repo;

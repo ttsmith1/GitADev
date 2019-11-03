@@ -122,7 +122,7 @@ const StyledTextField = styled2(TextField)({
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { language: '', location: '', experience: 0, users: [] };
+    this.state = { language: '', location: '', experience: 1, users: [] };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
@@ -217,9 +217,6 @@ class Home extends Component {
             onChange={this.handleSelect}
             style={{ color: '#fff', underline: '#fff' }}
           >
-            <MenuItem value={0}>
-              {'All'}
-            </MenuItem>
             <MenuItem style={{ color: '#000' }} value={1}>{'Beginner'}</MenuItem>
             <MenuItem value={2}>{'Intermediate'}</MenuItem>
             <MenuItem value={3}>{'Advanced'}</MenuItem>
